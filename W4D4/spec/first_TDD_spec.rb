@@ -1,3 +1,5 @@
+require "rspec"
+require "first_TDD_spec.rb"
 # Do all of the following exercises TDD. That means writing specs first!
 
 # When approaching each problem, make sure to:
@@ -9,9 +11,18 @@
 # Remove dups
 # Array has a uniq method that removes duplicates from an array. It returns the unique elements in the order in which they first appeared:
 
+describe my_uniq do
+
+    it "my_uniq should exist in the file" do
+        expect(:my_uniq).to exist
+    
+    
+    end
+end
+
+
 # [1, 2, 1, 3, 3].uniq # => [1, 2, 3]
 # Write your own version of this method called my_uniq; it should take in an Array and return a new array.
-
 
 
 # Two sum
