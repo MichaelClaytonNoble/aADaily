@@ -1,35 +1,31 @@
-require "rspec"
-require "first_TDD_spec.rb"
-# Do all of the following exercises TDD. That means writing specs first!
+require "first_TDD.rb"
 
-# When approaching each problem, make sure to:
+describe "#my_uniq" do 
 
-# Read the entire problem statement.
-# Talk with your partner to identify test cases and key functionality to expect from your code.
-# Write RSpec tests.
-# Write the method you now have tests for. Follow the red-green-refactor approach until all specs pass.
-# Remove dups
-# Array has a uniq method that removes duplicates from an array. It returns the unique elements in the order in which they first appeared:
+  subject(:arr){[1,1,2,2,3,3]}
 
-describe my_uniq do
+  it 'returns elements in order with no duplicates' do
+    arr1 = my_uniq(arr)
 
-    it "my_uniq should exist in the file" do
-        expect(:my_uniq).to exist
-    
-    
-    end
+    expect(arr1).to match_array([1,2,3])
+  end
+
+  it 'returns an array' do
+    expect(my_uniq(arr)).to be_a_kind_of(Array)
+  end
+
+end 
+
+describe "#two_sum" do
+
+  subject(:arr){[-1,0,1,3,-3,0]}
+  let(:result){[[0,2],[1,5],[3,4]]}
+  it 'find all pairs of indices that sum to zero' do 
+    expect(two_sum(arr)).to contain_exactly([0,2],[3,4],[1,5])
+  end
+
+  it 'the pairs should be sorted from ' do
+    expect(two_sum(arr)).to match_array(two_sum(arr).sort)
+  end
+
 end
-
-
-# [1, 2, 1, 3, 3].uniq # => [1, 2, 3]
-# Write your own version of this method called my_uniq; it should take in an Array and return a new array.
-
-
-# Two sum
-# Write a new Array#two_sum method that finds all pairs of positions where the elements at those positions sum to zero.
-
-# NB: ordering matters. We want each of the pairs to be sorted smaller index before bigger index. We want the array of pairs to be sorted "dictionary-wise":
-
-# [-1, 0, 2, -2, 1].two_sum # => [[0, 4], [2, 3]]
-# [0, 2] before [2, 1] (smaller first elements come first)
-# [0, 1] before [0, 2] (then smaller second elements come first)
