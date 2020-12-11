@@ -15,3 +15,19 @@ def two_sum(arr)
   end
   pairs
 end
+
+def my_transpose(arr)
+  arr.transpose
+end
+
+def stock_picker(arr)
+  i=0
+  j=1
+  pair = [0,0]
+  arr.each_with_index do |ei, i|
+    arr.each_with_index do |ej, j|
+      pair = [i,j] if (  (ei-ej).abs > arr[pair[0]][pair[1]] && j > i)
+    end
+  end
+  pair
+end

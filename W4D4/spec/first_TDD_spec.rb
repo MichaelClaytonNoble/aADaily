@@ -29,3 +29,21 @@ describe "#two_sum" do
   end
 
 end
+
+
+describe "#my_transpose" do 
+  subject(:rows){ ([ [0,1,2],[3,4,5],[6,7,8] ]) }
+  let(:transposed_rows){ ([ [0,3,6],[1,4,7],[2,5,8] ]) }
+
+  it 'transposes a 2d array' do 
+    expect(my_transpose(rows)).to match_array(transposed_rows)
+  end
+end 
+
+describe "#stock_picker" do 
+
+  it 'find the pair with the largest difference' do 
+    expect(stock_picker([1,2,3,4,99,10000])).to eq([4,5])
+  end
+
+end
